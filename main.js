@@ -9,7 +9,7 @@ client.once('ready', () => {
 
 });
 
-client.login('');
+client.login('Nzc1NjkyMjE5OTg1OTUyODE4.X6qBrA.RdybeLIPyTLdDXQi4tv3oAx6Gig');
 
 client.on('message', message => {
     if (message.content === 'mwona') {
@@ -75,7 +75,7 @@ client.on('message', message => {
 // 8-Ball
 
 /* const regEx = /is [/W/d]+ /g; */
-const regEx = /is|are|do|will/g;
+const regEx = /is |are |do |will [a-zA-z0-9]/;
 const ans = [
     'As I see it, yes.',
     'Ask again later.',
@@ -99,10 +99,10 @@ const ans = [
     'You may rely on it.'
 ];
 client.on('message', message => {
-let match = regEx.test(message.content);
-if(match){
-    message.reply(ans[Math.floor(Math.random()*ans.length)]);
-}
+    let match = regEx.test(message.content);
+    if(match && message.member.id !== botID){
+        message.reply(ans[Math.floor(Math.random()*ans.length)]);
+    }
 
 });
 

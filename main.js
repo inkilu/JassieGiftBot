@@ -9,7 +9,7 @@ client.once('ready', () => {
 
 });
 
-client.login('Nzc1NjkyMjE5OTg1OTUyODE4.X6qBrA.FP1UBnJnpfMh1GvDHJmVJc-o7eg');
+client.login('');
 
 client.on('message', message => {
     if (message.content === 'mwona') {
@@ -25,14 +25,14 @@ client.on('message', message => {
     }
 });
 let emoji = [
-    '😘','🥰','💋',
+    '😘', '🥰', '💋',
     '👋', '🤚', '🖐',
     '✋', '🖖', '👌',
     '✌️', '🤞', '🤟',
     '🤘', '🤙', '🖕',
     '👍', '👎', '✊',
     '👊', '👏', '🙌',
-    '🤝', '🙏','🤣'
+    '🤝', '🙏', '🤣'
 
 ];
 
@@ -44,6 +44,7 @@ client.on('message', message => {
     }
 });
 
+// B.E.D Werd Detector
 
 const bed = [
     'fuk u mwona',
@@ -69,6 +70,42 @@ client.on('message', message => {
         message.reply(message.author.displayAvatarURL());
     }
 });
+
+
+// 8-Ball
+
+/* const regEx = /is [/W/d]+ /g; */
+const regEx = /is|are|do|will/g;
+const ans = [
+    'As I see it, yes.',
+    'Ask again later.',
+    'Better not tell you now.',
+    'Cannot predict now.',
+    'Concentrate and ask again.',
+    'Don’t count on it.',
+    'It is certain.',
+    'It is decidedly so.',
+    'Most likely.',
+    'My reply is no.',
+    'My sources say no.',
+    'Outlook not so good.',
+    'Outlook good.',
+    'Reply hazy, try again.',
+    'Signs point to yes.',
+    'Very doubtful.',
+    'Without a doubt.',
+    'Yes.',
+    'Yes – definitely.',
+    'You may rely on it.'
+];
+client.on('message', message => {
+let match = regEx.test(message.content);
+if(match){
+    message.reply(ans[Math.floor(Math.random()*ans.length)]);
+}
+
+});
+
 
 // Joining Voice Channel
 

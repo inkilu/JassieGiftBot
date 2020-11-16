@@ -9,7 +9,7 @@ client.once('ready', () => {
 
 });
 
-client.login('Nzc1NjkyMjE5OTg1OTUyODE4.X6qBrA.RdybeLIPyTLdDXQi4tv3oAx6Gig');
+client.login(process.env.DIS_TOKEN);
 
 client.on('message', message => {
     if (message.content === 'mwona') {

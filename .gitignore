@@ -46,6 +46,7 @@ typings/
 
 # TypeScript cache
 *.tsbuildinfo
+jassie.mp3
 
 # Optional npm cache directory
 .npm
